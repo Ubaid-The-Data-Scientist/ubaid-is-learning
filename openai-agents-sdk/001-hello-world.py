@@ -6,7 +6,7 @@ import os
 
 
 load_dotenv()
-GEMINI_API_KEY = os.getenv("GEMINI-API-KEY")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 set_tracing_disabled(disabled=True)
 # enable_verbose_stdout_logging()
 
@@ -21,7 +21,10 @@ async def main():
     agent = Agent(
         name="Assistant",
         instructions="You are a question answering bot. Keep answers 1-2 lines long.",
-        model=OpenAIChatCompletionsModel(model="gemini-2.0-flash", openai_client=client),
+        model=OpenAIChatCompletionsModel(
+            model="gemini-2.0-flash", 
+            openai_client=client
+            ),
         model_settings=ModelSettings(max_tokens=100)
     )
 
