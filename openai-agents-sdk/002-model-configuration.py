@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import os
 from agents import Agent, OpenAIChatCompletionsModel, Runner, set_default_openai_api, set_default_openai_client, set_tracing_disabled
 from agents.run import RunConfig
-import asyncio
+# import asyncio
 
 load_dotenv()
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
